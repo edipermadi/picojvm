@@ -19,7 +19,13 @@ pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
 
-add_executable(picojvm picojvm.c )
+add_executable(picojvm
+        src/picojvm.c
+        src/jvm.h
+        src/jvm.c
+        src/jvm_instructions.c
+        src/jvm_instructions.h
+        src/jvm_opcodes.h src/jvm_instructions_priv.h)
 
 pico_set_program_name(picojvm "picojvm")
 pico_set_program_version(picojvm "0.1")
